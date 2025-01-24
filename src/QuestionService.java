@@ -1,12 +1,23 @@
 import java.sql.*;
+import java.util.Scanner;
+
 public class QuestionService {
     Questions Quest[]= new Questions[5];
 
     public void displayQuestion(){
+        Scanner sc= new Scanner(System.in);
+        int score=0;
         for(Questions Q : Quest ){
-            System.out.println(Q.getQuestion());
-            System.out.println();
+            System.out.println("Q. "+ Q.getNum()+ " " + Q.getQuestion());
+            System.out.println("a."+Q.getOption_a()+" b."+Q.getOption_b()+" c."+
+                    Q.getOption_c()+" d."+ Q.getOption_d());
+            char ans = sc.next().charAt(0);
+            if(ans==Q.getCorrect_option()){
+                score ++;
+            }
         }
+        System.out.println("Your Score is "+ score +" !");
+
     }
     public void insertQuestion(Connection conn){
         String query= "select* from questions";

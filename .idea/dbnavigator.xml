@@ -6,8 +6,26 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
+  </component>
+  <component name="DBNavigator.Project.DataExportManager">
+    <export-instructions>
+      <create-header value="true" />
+      <friendly-headers value="false" />
+      <quote-values-containing-separator value="true" />
+      <quote-all-values value="false" />
+      <value-separator value="" />
+      <begin-quote value="&quot;" />
+      <end-quote value="&quot;" />
+      <file-name value="" />
+      <file-location value="" />
+      <scope value="GLOBAL" />
+      <destination value="FILE" />
+      <format value="EXCEL" />
+      <charset value="windows-1256" />
+      <charset value="windows-1256" />
+    </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
@@ -25,16 +43,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" object-ref="consoles/MysQLconnection" />
-      <object connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" object-ref="schemas/quizapp/tables/questions" />
+      <object connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" object-ref="schemas/quizapp/tables/admin" />
+      <object connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" object-ref="schemas/quizapp/tables/auth" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1f2e709f-7c64-4599-9f62-685c439b4ec8" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" dataset="quizapp.questions" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" dataset="database0.table1" active-filter-id="" />
+    <filter-actions connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" dataset="quizapp.auth" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1f2e709f-7c64-4599-9f62-685c439b4ec8" dataset="quizapp.admin" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
