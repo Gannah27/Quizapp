@@ -8,6 +8,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Database.setDbUser(scanner.next());
         Database.setDbPassword(scanner.next());
-       new Database();
+        Connection conn =Database.getConnection();
+        QuestionService quest = new QuestionService();
+
+        quest.insertQuestion(conn);
+        quest.displayQuestion();
     }
 }

@@ -1,20 +1,34 @@
+import java.sql.*;
 public class QuestionService {
     Questions Quest[]= new Questions[5];
 
-    public QuestionService() {
-        Quest[0]= new Questions(1,"what are you ", "a", "b", "c", "d","a");
-        Quest[1]= new Questions(2,"what are you ", "a", "b", "c", "d","a");
-        Quest[2]= new Questions(3,"what are you ", "a", "b", "c", "d","a");
-        Quest[3]= new Questions(4,"what are you ", "a", "b", "c", "d","a");
-        Quest[4]= new Questions(5,"what are you ", "a", "b", "c", "d","a");
-    }
     public void displayQuestion(){
         for(Questions Q : Quest ){
             System.out.println(Q.getQuestion());
             System.out.println();
         }
     }
-    public void insertQuestion(){
+    public void insertQuestion(Connection conn){
+        String query= "select* from questions";
 
+        try (Statement statement = conn.createStatement(); ResultSet resultSet = statement.executeQuery(query)) {
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int curr=id-1;
+                String question = resultSet.getString("question");
+                String optionA = resultSet.getString("option_a");
+                String optionB = resultSet.getString("option_b");
+                String optionC = resultSet.getString("option_c");
+                String optionD = resultSet.getString("option_d");
+                char correctOption = resultSet.getString("correct_option").charAt(0);
+                if (Quest[curr] == null) {
+                    Quest[curr] = new Questions(id,question,optionA,optionB,optionC,optionD,correctOption);
+                }
+
+            }} catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
 }

@@ -6,16 +6,16 @@ public class Questions
     private String option_b ;
     private String option_c ;
     private String option_d;
-    private String result;
+    private char correct_option;
 
-    public Questions(int num, String question, String option_a, String option_b, String option_c, String option_d, String result) {
+    public Questions(int num, String question, String option_a, String option_b, String option_c, String option_d, char result) {
         this.num = num;
         Question = question;
         this.option_a = option_a;
         this.option_b = option_b;
         this.option_c = option_c;
         this.option_d = option_d;
-        this.result = result;
+        this.correct_option = result;
     }
 
     public int getNum() {
@@ -66,11 +66,11 @@ public class Questions
         this.option_d = option_d;
     }
 
-    public String getResult() {
-        return result;
+    public char getCorrect_option() {
+        return correct_option;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setCorrect_option(char correct_option) {
+        this.correct_option = correct_option;
     }
 }
