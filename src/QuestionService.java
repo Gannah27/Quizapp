@@ -6,17 +6,17 @@ public class QuestionService {
 
     public void displayQuestion(){
         Scanner sc= new Scanner(System.in);
-        int score=0;
+        Score soc= new Score();
         for(Questions Q : Quest ){
             System.out.println("Q. "+ Q.getNum()+ " " + Q.getQuestion());
             System.out.println("a."+Q.getOption_a()+" b."+Q.getOption_b()+" c."+
                     Q.getOption_c()+" d."+ Q.getOption_d());
             char ans = sc.next().charAt(0);
             if(ans==Q.getCorrect_option()){
-                score ++;
+                soc.points ++;
             }
         }
-        System.out.println("Your Score is "+ score +" !");
+        System.out.println("Your Score is "+ soc.points +" !");
 
     }
     public void insertQuestion(Connection conn){
